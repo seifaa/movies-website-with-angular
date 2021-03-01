@@ -1,0 +1,32 @@
+<form [formGroup]='loginForms' (ngSubmit)='submitForm(loginForms)'>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{errorMessage}}
+    </div>
+
+
+
+
+    <label>email :</label>
+    <input formControlName='email' type="email" class="form-control mb-3">
+    <div *ngIf="loginForms.get('email').errors  && loginForms.get('email').touched"
+        class="alert border border-danger">
+        <p *ngIf="loginForms.get('email').errors.required" class="text-white">Mail is Required</p>
+        <p *ngIf="loginForms.get('email').errors.email" class="text-white">Mail invalid</p>
+
+    </div>
+
+
+
+    <label>password :</label>
+    <input formControlName='password' type="password" class="form-control mb-3">
+    <div *ngIf="loginForms.get('password').errors  && loginForms.get('password').touched"
+        class="alert border border-danger">
+        <p *ngIf="loginForms.get('password').errors.required" class="text-white">password is Required</p>
+        <p *ngIf="loginForms.get('password').errors.pattern" class="text-white">password pattern is invalid password
+            should ...</p>
+
+    </div>
+
+    <button type="submit" [disabled]='loginForms.invalid' class="btn btn-info">login</button>
+
+</form>

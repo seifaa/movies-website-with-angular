@@ -1,0 +1,72 @@
+
+
+
+<div class="p-5">
+  <input type="text"  [(ngModel)]='term' class="form-control  text-white bg-transparent" name="" id="">
+
+
+</div>
+
+<div class="row">
+
+
+  <div class="col-md-4">
+
+    <div class="brdr w-25 mb-4"></div>
+    
+    <h3>Trending <br/> Movies  <br/> To Watch Right Now</h3>
+    <p class="secondFontColor">most watched movies by day</p>
+
+    <div class="brdr w-100 mt-4"></div>
+
+  </div>
+
+  <div *ngFor="let movie of trendingMovie|search:term" class="col-md-2 ">
+
+    <div class="movie position-relative">
+
+  
+    <img class="w-100" [src]="imgPrefix+movie.poster_path" alt="" >
+    <h4 class="h5 my-3">{{movie.title}}</h4>
+    <div class="vote position-absolute">{{movie.vote_average}}</div>
+
+  </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+<div class="row mt-5">
+
+
+  <div class="col-md-4">
+
+    <div class="brdr w-25 mb-4"></div>
+    
+    <h3>Trending <br/> Tv  <br/> To Watch Right Now</h3>
+    <p class="secondFontColor">most watched movies by day</p>
+
+    <div class="brdr w-100 mt-4"></div>
+
+  </div>
+
+  <div *ngFor="let tv of trendingTv|search:term" class="col-md-2 ">
+
+    <div class="movie position-relative">
+
+  
+    <img class="w-100" [src]="imgPrefix+tv.poster_path" alt="" >
+    <h4 class="h5 my-3">{{tv.name}}</h4>
+    <div class="vote position-absolute">{{tv.vote_average}}</div>
+
+  </div>
+  </div>
+
+
+
+</div>

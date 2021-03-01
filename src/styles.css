@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
+body
+{
+    background-color: #131722 !important;
+    color: #fff !important;
+    font-family: 'Montserrat Alternates', sans-serif !important;
+}
+.brdr
+{
+    height: 1px;
+    background-color: #a8a8a83d !important;
+}
+
+.secondFontColor
+{
+    color:  #949cb0 !important;
+}
+.vote
+{
+    background-color: #24baef;
+    padding: 5px;
+    top: 0;
+    right: 0;
+}
+
+input
+{
+    background-color: transparent !important;
+    color: #fff !important  ;
+    border-color: #a8a8a83d !important;
+}

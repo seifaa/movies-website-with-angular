@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark text-white bg-transparent">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+ 
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/home">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/movies">Movies</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/tv">Tv</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/network">Network</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/people">people</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" routerLink="/gallery">Gallery</a>
+        </li>
+
+        <li  *ngIf="isLogin" class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            user
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"> <img src="assets/images/two.png" width="50" class="rounded-circle" alt="">{{currentUser.first_name}} {{currentUser.last_name}}</a>
+            <a class="dropdown-item" href="#">Mail :{{currentUser.email}}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Age :{{currentUser.age}}</a>
+          </div>
+        </li>
+    
+      </ul>
+
+
+      <ul class="navbar-nav ml-auto">
+ 
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!isLogin" [routerLinkActive]="'test'" routerLink="/register">Register</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!isLogin" [routerLinkActive]="'test'" routerLink="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="isLogin" [routerLinkActive]="'test'" >logOut</a>
+        </li>
+        </ul>
+    </div>
+  </nav>
